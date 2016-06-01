@@ -54,7 +54,6 @@
 <script>
   $('#js-btn-submit').click(function(){
     var formData = $('#js-form').serialize();
-    console.log(formData);
     $.getJSON('/api', formData, function(response){
       console.log(response);
     });
