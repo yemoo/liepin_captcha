@@ -8,6 +8,10 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+
+app.get('/favicon.ico', function(req, res) {
+  res.send('');
+});
 /**
  * 传入的参数
  */
