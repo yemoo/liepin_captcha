@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>test</title>
+  <style>
+    body{
+      padding: 50px;
+      text-align: center;
+    }
+
+    form{
+      margin: 0 auto;
+    }
+    label{
+      width: 100px;
+      display: inline-block;
+      text-align: right;
+      line-height: 30px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+    input {
+      width: 350px;
+      line-height: 30px;
+      padding: 0 10px;
+    }
+  </style>
+</head>
+<body>
+<form id="js-form" action="">
+  <h1>猎聘验证码获取程序测试</h1>
+  <p>
+    <label for="">challenge</label>
+    <input type="text" name="challenge" value="a55692e7ab2a205b318036ef1dd24714">
+  </p>
+  <p>
+    <label for="">coord</label>
+    <input type="text" name="coord" value="181,117;123,91;76,124;66,162">
+  </p>
+  <p>
+    <label for="">startTime</label>
+    <input type="text" name="startTime" value="">
+  </p>
+  <p>
+    <label for="">wordCount</label>
+    <input type="text" name="wordCount" value="4">
+  </p>
+  <p>
+    <button type="button" id="js-btn-submit">提交</button>
+  </p>
+</form>
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script>
+  $('#js-btn-submit').click(function(){
+    var formData = $('#js-form').serialize();
+    console.log(formData);
+    $.getJSON('/api', formData, function(response){
+      console.log(response);
+    });
+  });
+</script>
+</body>
+</html>
