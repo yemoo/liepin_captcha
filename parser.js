@@ -147,7 +147,9 @@ module.exports = function(config) {
     startTime: curTime,
     keydownData: [],
     captchaImage: captchaImageOffset,
-    "challenge": challenge
+    challenge: challenge,
+    plugins: 5,
+    resolution: [1440, 900]
   };
 
   // 触发弹出验证码的按钮
@@ -232,7 +234,6 @@ module.exports = function(config) {
   }).toString().replace(/\+/g, "-").replace(/\//g, "_").replace(/=/g, "*");
 
   // console.log(collectData);
-
   // var timer = setInterval(function() {
   //   if (Date.now() - submitTime < 1000) return true;
   //   clearInterval(timer);
